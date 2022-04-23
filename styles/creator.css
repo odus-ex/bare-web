@@ -1,0 +1,21 @@
+@import "globals.css";
+
+.btn-generate-table {
+  padding: 0.25rem;
+  height: fit-content;
+  width: fit-content;
+}
+
+.result-container {
+  border: 2px solid black;
+  width: 80%;
+  min-height: 50vh;
+  max-height: 60vh;
+  overflow-y: scroll;
+  padding: 2rem;
+}
+
+.table-cell {
+  border: 2px solid black;
+  padding: 0.5rem;
+}

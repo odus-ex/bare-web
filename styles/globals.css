@@ -1,0 +1,33 @@
+body {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  /* Do not override this */
+  font-size: 16px !important;
+}
+
+.view-wrapper-grid {
+  /* has two sections, one is for action, one is for the results */
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  grid-row: auto;
+  /* border: 2px solid red; */
+  width: 100vw;
+  height: 100vh;
+}
+
+.view-wrapper-grid__action {
+  display: flex;
+  grid-column: 1/2;
+  /* border: 2px solid red; */
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.view-wrapper-grid__result {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2/3;
+  /* border: 2px solid green; */
+  padding: 1rem;
+}
