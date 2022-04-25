@@ -13,14 +13,25 @@
     <script src="./scripts/creator.js">
 
     </script>
-    <title>Document</title>
+    <title>Table Designer</title>
   </head>
-  <body>
+  <body onload="initialiseCanvas()">
     <main class="view-wrapper-grid">
         <section class="view-wrapper-grid__action">
-            <button class="btn-generate-table" onclick="generateTable()">
+          <h1> Draw a grid </h1>
+          <section class="canvas-wrapper">
+
+            <canvas id="drawingBoard">
+              
+            </canvas>
+          </section>
+          
+          <button class="btn-generate-table" onclick="generateTable()">
             Click me to generate a table
             </button>
+            <button class="btn-generate-table" onclick="downloadCanva(this)">
+              Save Canva
+              </button>
         </section>
         <section class="view-wrapper-grid__result" >
            <h2>Your generated element will appear here</h2> 

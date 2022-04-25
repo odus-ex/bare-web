@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +7,19 @@
     <title>Document</title>
   </head>
   <body>
-    Hello DOM!
+    <div>Contents</div>
+    <ul>
+      <li><a>Creator Table</a></li>
+      <li><a>Demo DOM Parser</a></li>
+    </ul>
+    <script>
+      function doSome() {
+        var bodyArr = document.getElementsByTagName("body")[0];
+        var ulArr = bodyArr.getElementsByTagName("ul")[0];
+        var liArr = ulArr.getElementsByTagName("li")[0];
+        console.log(ulArr.getAttributeNames());
+      }
+      doSome();
+    </script>
   </body>
 </html>
