@@ -33,3 +33,54 @@ function generateTable() {
 function assignBorder(documentType) {
   documentType.classList.add("table-cell");
 }
+
+function initialiseCanvas() {
+  //once window is initialized, attach all the eventlistners
+  // resize();
+  canvaRef = document.getElementById("drawingBoard");
+  //stretch canva size to its container, do not do this with CSS
+  canvaWrapper = document.querySelector(".canvas-wrapper");
+  canvaRef.height = canvaWrapper.clientHeight;
+  canvaRef.width = canvaWrapper.clientWidth;
+  ctx = canvaRef.getContext("2d");
+
+  paint = false;
+  cursorPos = {
+    x: 0,
+    y: 0,
+  };
+
+  canvaRef.addEventListener("mousedown", startPainting);
+  canvaRef.addEventListener("mouseup", stopPainting);
+  canvaRef.addEventListener("mousemove", sketch);
+  // window.addEventListener("resize", resize);
+}
+
+function getCursorPos(event) {
+  cursorPos.x = event.clientX - canvaRef.offsetLeft;
+  cursorPos.y = event.clientY - canvaRef.offsetTop;
+}
+
+function startPainting(event) {
+  paint = true;
+  getCursorPos(event);
+}
+
+function stopPainting() {
+  paint = false;
+}
+
+function sketch(event) {
+  if (!paint) return;
+  ctx.beginPath();
+  ctx.strokeStyle = "black";
+  ctx.moveTo(cursorPos.x, cursorPos.y);
+  getCursorPos(event);
+  ctx.lineTo(cursorPos.x, cursorPos.y);
+  ctx.stroke();
+}
+
+function downloadCanva(event) {
+  var imageURI = canvaRef.toDataURL("image/jpg");
+  window.location.href = imageURI;
+}
