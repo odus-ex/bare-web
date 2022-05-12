@@ -1,0 +1,50 @@
+@import "globals.css";
+
+.toast-origin-container {
+  border: 2px solid red;
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+.toast-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px solid green;
+  width: 300px;
+  height: 50px;
+  position: relative;
+}
+
+.toast-fade-in {
+  animation: fade-in 0.3s linear;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.toast-fade-out {
+  animation: fade-out 0.5s linear;
+}
+
+@keyframes fade-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
